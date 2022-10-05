@@ -1,5 +1,4 @@
-
-namespace OrderAPI.Models
+﻿namespace WebApplication1.Models
 {
     public enum OrderType
     {
