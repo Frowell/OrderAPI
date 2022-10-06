@@ -107,7 +107,16 @@ namespace OrderAPI.Controllers
         [HttpGet("OrdersByType/{type}")]
         public async Task<ActionResult<List<Order>>> GetOrdersByType(OrderType type)
         {
-            var order = _orderDataAccess.RetrieveOrdersByType(type, _context);
+            var order = new List<Order>();
+            if(OrderType.None == type)
+            {
+                order = _orderDataAccess.GetAllOrders(_context);
+            } 
+            else
+            {
+                order = _orderDataAccess.RetrieveOrdersByType(type, _context);
+            }
+             
 
 
             if (order == null)

@@ -7,7 +7,8 @@ namespace OrderAPI.Models
         SaleOrder,
         PurchaseOrder,
         TransferOrder,
-        ReturnOrder
+        ReturnOrder,
+        None
     }
     public class Order
     {
